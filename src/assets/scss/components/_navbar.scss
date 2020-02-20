@@ -1,0 +1,199 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    z-index: 100;
+    pointer-events: none;
+
+    .navbar-input,
+    .navbar-button,
+    .navbar-menu {
+        position: absolute;
+        left: 60px;
+        top: 60px;
+        height: 70px;
+        width: 70px;
+        cursor: pointer;
+        margin: 0;
+        pointer-events: auto;
+    }
+
+    .navbar-input {
+        z-index: 103;
+        opacity: 0;
+
+        &:hover~.navbar-button {
+            background-position-y: bottom;
+            background-size: 0;
+            transform: scale(1.1);
+
+            span {
+                background-color: $white;
+            }
+        }
+
+        &:checked,
+        &:checked~.navbar-menu,
+        &:checked~.navbar-button {
+            height: 50px;
+            width: 50px;
+            left: 50px;
+            top: 50px;
+        }
+
+        &:checked~.navbar-button {
+            background-position-y: bottom;
+            background-size: 0;
+            transform: scale(1.2);
+
+            span {
+                background-color: $white;
+                transition: opacity $transition-duration $transition-duration ease-in-out;
+
+                &:first-child {
+                    top: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    transition: top $transition-duration ease-in-out, bottom $transition-duration ease-in-out, transform $transition-duration $transition-duration ease-in-out;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    bottom: 50%;
+                    transform: translate(-50%, 50%) rotate(-45deg);
+                    transition: top $transition-duration ease-in-out, bottom $transition-duration ease-in-out, transform $transition-duration $transition-duration ease-in-out;
+                }
+            }
+        }
+
+        &:checked~.navbar-menu a {
+            color: $white;
+            transition: transform $transition-duration ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+        }
+
+        &:checked~.navbar-menu.navbar-smooth-in a {
+            transition: transform $transition-duration 0s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+        }
+
+        &:checked~.navbar-menu a {
+            &:first-child {
+                transform: translate(200%, -100%);
+            }
+
+            &:nth-child(2) {
+                transform: translate(230%, 40%)
+            }
+
+            &:nth-child(3) {
+                transform: translate(160%, 160%)
+            }
+
+            &:nth-child(4) {
+                transform: translate(40%, 230%)
+            }
+
+            &:last-child {
+                transform: translate(-100%, 200%);
+            }
+        }
+
+        &:checked~.navbar-menu.navbar-smooth-out a {
+            &:first-child {
+                transition: transform $transition-duration $transition-duration ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+
+            &:nth-child(2) {
+                transition: transform $transition-duration .3s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+
+            &:nth-child(3) {
+                transition: transform $transition-duration .2s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+
+            &:nth-child(4) {
+                transition: transform $transition-duration .1s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+        }
+    }
+
+    .navbar-button {
+        z-index: 102;
+        background: $primary-color url("../img/logo-white.svg") center -100% no-repeat;
+        background-size: 100%;
+        border-radius: 50%;
+        transition: all $transition-duration ease-out;
+
+        span {
+            display: block;
+            position: absolute;
+            left: 50%;
+            width: 50%;
+            height: 3px;
+            background-color: transparent;
+            transform: translate(-50%, 0);
+            transition: top $transition-duration $transition-duration ease-in-out, bottom $transition-duration $transition-duration ease-in-out, transform $transition-duration ease-in-out, opacity $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+
+            &:first-child {
+                top: 30%;
+            }
+
+            &:nth-child(2) {
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:last-child {
+                bottom: 30%;
+            }
+        }
+    }
+
+    .navbar-menu {
+        background-color: $primary-color;
+        border-radius: 50%;
+        transition: all $transition-duration ease-out;
+
+        a {
+            position: absolute;
+            z-index: 101;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: $primary-color;
+            border-radius: 50%;
+            text-align: center;
+            color: $white;
+            padding-top: 20px;
+            color: $primary-color;
+            transition: transform $transition-duration ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+        
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+
+        &.navbar-smooth-in a {
+            &:first-child {
+                transition: transform $transition-duration $transition-duration ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+
+            &:nth-child(2) {
+                transition: transform $transition-duration .3s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+            
+            &:nth-child(3) {
+                transition: transform $transition-duration .2s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+            
+            &:nth-child(4) {
+                transition: transform $transition-duration .1s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            }
+        }
+    }
+}

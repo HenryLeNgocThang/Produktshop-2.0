@@ -1,0 +1,94 @@
+#offers {
+    width: 100%;
+    height: auto;
+    margin: 0 0 50px;
+    background-color: $secondary-color;
+
+    .le-slider {
+        display: flex;
+        align-items: center;
+    }
+
+    .le-slider-container .le-slider-state.le-slider-play,
+    .le-slider-container .le-slider-state.le-slider-paused {
+        &:before {
+            color: $primary-color;
+        }
+    }
+
+    .offer-container {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100%;
+        padding: 50px 0;
+
+        @include breakpoint(medium) {
+            width: 80%;
+        }
+
+        @include breakpoint(large) {
+            width: 80%;
+        }
+
+        .offer-content {
+            flex: 1 1 50%;
+            height: auto;
+            padding: 20px;
+            position: relative;
+
+            @include breakpoint(large) {
+                flex: 1 1 25%;
+            }
+    
+            a {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+            }
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+    
+            .offer-text {
+                >.le-row {
+                    align-items: center;
+                }
+    
+                .offer-discount,
+                .offer-precoast,
+                .offer-coast {
+                    margin: 0;
+                    text-align: center;
+                    display: block;
+                }
+    
+                .offer-discount {
+                    color: $white;
+                    background-color: $primary-color;
+                    font-size: 28px;
+                    height: 40px;
+                    border-radius: 4px;
+                }
+    
+                .offer-precoast,
+                .offer-coast {
+                    color: $white;
+                    height: 20px;
+                }
+    
+                .offer-precoast {
+                    text-decoration: line-through;
+                }
+    
+                .offer-coast {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

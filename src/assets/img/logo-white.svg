@@ -1,0 +1,37 @@
+<svg width="250" height="250" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g stroke="null">
+  <title stroke="null">background</title>
+  <g stroke="null" style="vector-effect: non-scaling-stroke;" display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <metadata stroke="null" style="vector-effect: non-scaling-stroke;" transform="matrix(0.006944444858365595,0,0,0.006944444858365595,0,0) " id="svg_29">image/svg+xml</metadata>
+  <defs stroke="null" style="vector-effect: non-scaling-stroke;">
+   <clipPath stroke="null" style="vector-effect: non-scaling-stroke;" clipPathUnits="userSpaceOnUse" id="svg_20">
+    <path stroke="null" style="vector-effect: non-scaling-stroke;" d="m28930.911614,-19586.791329l1200,0l0,-1200l-1200,0l0,1200z" id="svg_28"/>
+   </clipPath>
+  </defs>
+  <g stroke="null" id="svg_31">
+   <g stroke="null" id="svg_17" transform="matrix(0.7812271715169982,0,0,-0.7812271715169982,-22942.698895021258,-15561.89577962682) ">
+    <path fill-opacity="0" fill-rule="nonzero" d="m28930.911614,-20786.791329l1200,0l0,1200l-1200,0l0,-1200z" id="svg_27"/>
+    <g stroke="null" id="svg_18">
+     <g stroke="null" id="svg_19" clip-path="url(#svg_20)">
+      <g stroke="null" id="svg_25">
+       <path fill="#ffffff" fill-rule="evenodd" d="m29520.041497,-20163.958321l-39.88,23.025l-47.649,27.51c-1.569,0.905 -2.467,2.462 -2.467,4.274l0,55.019l0,55.019c0,1.812 0.898,3.368 2.467,4.274l47.649,27.509l47.648,27.51c5.25,3.032 3.065,-18.199 0.425,-19.723l-39.426,-22.764l-39.428,-22.762c-1.298,-0.75 -2.041,-2.037 -2.041,-3.537l0,-45.526l0,-45.526c0,-1.5 0.743,-2.787 2.041,-3.537l39.428,-22.763l31.233,-18.033l0,-19.969z" id="svg_26"/>
+      </g>
+      <g stroke="null" id="svg_23">
+       <path fill="#ffffff" fill-rule="evenodd" d="m29525.763237,-20056.5691l9.64,0c2.082,0 3.786,-1.704 3.786,-3.786l0,-120.942l33.827,19.531l39.427,22.762c1.299,0.75 2.042,2.038 2.042,3.538l0,45.525l0,45.526c0,1.5 -0.743,2.787 -2.042,3.537l-39.427,22.763l-39.427,22.763c-2.64,1.525 -4.824,22.755 0.426,19.723l47.647,-27.509l47.649,-27.51c1.569,-0.905 2.468,-2.462 2.468,-4.274l0,-55.019l0,-55.019c0,-1.812 -0.899,-3.368 -2.468,-4.274l-47.649,-27.509l-42.473,-24.523l0,-19.681c0,-2.082 -1.704,-3.787 -3.786,-3.787l-9.64,0c-2.083,0 -3.787,1.704 -3.787,3.787l0,160.592c0,2.082 1.704,3.786 3.787,3.786" id="svg_24"/>
+      </g>
+      <g stroke="null" id="svg_21">
+       <path fill="#ffffff" fill-rule="evenodd" d="m29579.809136,-20067.941231c36.668,-39.678 -39.073,-35.938 0,0" id="svg_22"/>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

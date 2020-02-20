@@ -1,0 +1,26 @@
+@import 'partials/settings';
+@import 'partials/imports';
+
+@import 'components/footer';
+@import 'components/hero';
+@import 'components/navbar';
+@import 'components/offer';
+@import 'components/recommend';
+
+#ie {
+    display: none;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body>:not(#ie) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    #ie {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}

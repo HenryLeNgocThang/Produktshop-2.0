@@ -1,0 +1,30 @@
+<div class="offer-content">
+    {{# if link}}
+        <a href="{{link}}">
+    {{/if}}
+    {{# if image}}
+        <div class="offer-image">
+            <img src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/offers/{{image}}" alt="">
+        </div>
+    {{/if}}
+    <div class="offer-text">
+        <div class="le-row">
+            <div class="le-cell-3">
+                <p class="offer-discount">{{#if discount}}{{discount}}{{else}}50%{{/if}}</p>
+            </div>
+            <div class="le-cell-3">
+                <div class="le-column">
+                    <div class="le-cell-3">
+                        <p class="offer-precoast">{{#if precoast}}{{precoast}}{{else}}100,00 €{{/if}}</p>
+                    </div>
+                    <div class="le-cell-3">
+                        <p class="offer-coast">{{#if coast}}{{coast}}{{else}}50,00 €{{/if}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{# if link}}
+        </a>
+    {{/if}}
+</div>

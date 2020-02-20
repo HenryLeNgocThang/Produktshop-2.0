@@ -1,0 +1,13 @@
+{
+  "assetPath": "",
+  "companyInfo": {
+    "name": "webpack-boilerplate"
+  },
+  "seo": {
+    "description": "Boilerplate for frontend projects.",
+    "keywords": "webpack boilerplate",
+    "author": "Henry Le",
+    "copyright": "Henry Le",
+    "robots": "index,follow"
+  }
+}

@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="description" content="{{ htmlWebpackPlugin.options.config.seo.description }}" />
+<meta name="keywords" content="{{ htmlWebpackPlugin.options.config.seo.keywords }}" />
+<meta name="robots" content="{{ htmlWebpackPlugin.options.config.seo.robots }}" />
+<meta name="author" content="{{ htmlWebpackPlugin.options.config.seo.author }}" />
+<meta name="copyright" content="{{ htmlWebpackPlugin.options.config.seo.copyright }}" />
+
+<link rel="shortcut icon" type="image/x-icon" href="{{ htmlWebpackPlugin.options.assetPath }}assets/img/favicon.ico">
+<title>{{ htmlWebpackPlugin.options.config.companyInfo.name }}</title>
+
+<!--[if IE ]>
+    body >:not(#ie) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    #ie {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+<![endif]-->
+
+{{#> vendor-styles-block}}
+    <link rel="stylesheet" href="{{ htmlWebpackPlugin.options.assetPath }}assets/vendor/css/le-library.css">
+{{/vendor-styles-block}}

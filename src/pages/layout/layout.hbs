@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+  {{#> head-block}}
+  {{> head}}
+  {{/head-block}}
+
+</head>
+
+<body>
+
+  {{#> ie-message-block}}
+  {{> ie-message }}
+  {{/ie-message-block}}
+  
+  {{#> navbar-block}}
+  {{> navbar/navbar }}
+  {{/navbar-block}}
+
+  {{#> main-block}}
+  <main></main>
+  {{/main-block}}
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
+        <feBlend in="SourceGraphic" in2="gooey" />
+      </filter>
+    </defs>
+  </svg>
+
+  {{#> footer-block}}
+  {{> footer/footer }}
+  {{/footer-block}}
+
+  {{#> vendor-scripts-block}}
+  <script type="text/javascript" src="{{ htmlWebpackPlugin.options.assetPath }}assets/vendor/js/le-library.js"></script>
+  {{/vendor-scripts-block}}
+
+</body>
+
+</html>
