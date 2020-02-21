@@ -25,10 +25,6 @@
         opacity: 0;
 
         &:hover~.navbar-button {
-            background-position-y: bottom;
-            background-size: 0;
-            transform: scale(1.1);
-
             span {
                 background-color: $white;
             }
@@ -44,12 +40,7 @@
         }
 
         &:checked~.navbar-button {
-            background-position-y: bottom;
-            background-size: 0;
-            transform: scale(1.2);
-
             span {
-                background-color: $white;
                 transition: opacity $transition-duration $transition-duration ease-in-out;
 
                 &:first-child {
@@ -122,8 +113,6 @@
 
     .navbar-button {
         z-index: 102;
-        background: $primary-color url("../img/logo-white.svg") center -100% no-repeat;
-        background-size: 100%;
         border-radius: 50%;
         transition: all $transition-duration ease-out;
 
@@ -133,7 +122,7 @@
             left: 50%;
             width: 50%;
             height: 3px;
-            background-color: transparent;
+            background-color: $white;
             transform: translate(-50%, 0);
             transition: top $transition-duration $transition-duration ease-in-out, bottom $transition-duration $transition-duration ease-in-out, transform $transition-duration ease-in-out, opacity $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
 

@@ -14,16 +14,8 @@
   {{#> ie-message-block}}
   {{> ie-message }}
   {{/ie-message-block}}
-  
-  {{#> navbar-block}}
-  {{> navbar/navbar }}
-  {{/navbar-block}}
 
-  {{#> main-block}}
-  <main></main>
-  {{/main-block}}
-
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <svg id="gooey-svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>
       <filter id="gooey">
         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -32,6 +24,14 @@
       </filter>
     </defs>
   </svg>
+
+  {{#> navbar-block}}
+  {{> navbar/navbar }}
+  {{/navbar-block}}
+
+  {{#> main-block}}
+  <main></main>
+  {{/main-block}}
 
   {{#> footer-block}}
   {{> footer/footer }}

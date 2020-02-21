@@ -1,6 +1,12 @@
 #recommends {
     width: 100%;
     height: auto;
+    background-color: $secondary-color;
+
+    h2 {
+        color: $white;
+        text-align: center;
+    }
 
     .recommend-container {
         width: 100%;
@@ -14,7 +20,6 @@
             flex-wrap: wrap;
             width: 100%;
             transform: translate(0);
-
             @include breakpoint(large) {
                 width: 110%;
                 transform: translate(-5%);
@@ -28,6 +33,7 @@
                 background-size: cover;
                 transform: skew(0);
                 margin: 20px 0;
+                border-radius: 15px;
                 transition: all $transition-duration ease-in-out;
     
                 @include breakpoint(large) {
