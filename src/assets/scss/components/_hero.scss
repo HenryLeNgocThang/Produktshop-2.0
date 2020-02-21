@@ -20,6 +20,24 @@
         position: absolute;
         right: 50px;
         top: 30px;
+
+        &:after,
+        &:before {
+            font-family: 'FontAwesome';
+            font-size: 20px;
+        }
+
+        &:before {
+            content: "\f185";
+            margin-right: 10px;
+            color: $secondary-color;
+        }
+
+        &:after {
+            content: "\f186";
+            margin-left: 10px;
+            color: $primary-color;
+        }
     }
 
     // &:before,
