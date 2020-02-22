@@ -1,3 +1,7 @@
+// $primary-color: var(--primeColor);
+// $secondary-color: var(--secondColor);
+// $black: var(--black);
+// $white: var(--white);
 $primary-color: #00abff;
 $secondary-color: #0a2b3b;
 $black: #222;
@@ -7,6 +11,18 @@ $secondary-font-color: $white;
 $transition-duration: .4s;
 $body-font: "Open Sans", sans-serif;
 $headline-font: "Dosis", sans-serif;
+$background-primary-color: var(--primeColor);
+$background-secondary-color: var(--secondColor);
+
+body.light-mode {
+    --primeColor: #fff;
+    --secondColor: #222;
+}
+
+body.dark-mode {
+    --primeColor: #222;
+    --secondColor: #fff;
+}
 
 h1,
 h2,
@@ -25,9 +41,12 @@ a {
     display: flex;
     align-items: center;
     cursor: pointer;
+    position: relative;
+    z-index: 105;
 
     .toggle {
         position: relative;
+        z-index: 1;
         height: 24px;
         width: 48px;
         border-radius: 15px;

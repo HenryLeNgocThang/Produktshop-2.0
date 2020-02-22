@@ -161,10 +161,6 @@
             padding-top: 20px;
             color: $primary-color;
             transition: transform $transition-duration ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
-        
-            &:hover {
-                background-color: $secondary-color;
-            }
         }
 
         &.navbar-smooth-in a {

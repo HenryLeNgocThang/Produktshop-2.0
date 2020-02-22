@@ -13,19 +13,22 @@
             <div class="le-row">
                 <div class="le-cell-6">
                     <img src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/logo.svg" alt="Liquid Logo">
-                </div>
-                <div class="le-cell-6">
                     <h1>Liquid</h1>
-                </div>
-                <div class="le-cell-6">
                     <h2>Die zentrale für deine PC-Spiele!</h2>
-                    <a class="hero-button le-gooey-effect" href="#recommends">
-                        <span></span>
-                        <p>GO!</p>
-                        <span></span>
-                    </a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="hero-gooey le-gooey-effect">
+        <img class="hero-top" src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/liquid.svg" alt="Liquid GmbH">
+        <img class="hero-bottom" src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/liquid.svg" alt="Liquid GmbH">
+        <a class="hero-button" href="#recommends">
+            <span></span>
+            <p>GO!</p>
+            <span></span>
+        </a>
+        <span class="hero-circle"></span>
+        {{> navbar/navbar }}
     </div>
 </section>
