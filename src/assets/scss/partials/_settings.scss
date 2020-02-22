@@ -1,27 +1,29 @@
-// $primary-color: var(--primeColor);
-// $secondary-color: var(--secondColor);
-// $black: var(--black);
-// $white: var(--white);
-$primary-color: #00abff;
-$secondary-color: #0a2b3b;
-$black: #222;
-$white: #fff;
+$primary-color: var(--primeColor);
+$secondary-color: var(--secondColor);
+$black: var(--black);
+$white: var(--white);
+// $primary-color: #00abff;
+// $secondary-color: #0a2b3b;
+// $black: #222;
+// $white: #fff;
 $primary-font-color: $black;
 $secondary-font-color: $white;
 $transition-duration: .4s;
 $body-font: "Open Sans", sans-serif;
 $headline-font: "Dosis", sans-serif;
-$background-primary-color: var(--primeColor);
-$background-secondary-color: var(--secondColor);
 
 body.light-mode {
-    --primeColor: #fff;
-    --secondColor: #222;
+    --primeColor: #00abff;
+    --secondColor: #0a2b3b;
+    --white: #fff;
+    --black: #222;
 }
 
 body.dark-mode {
-    --primeColor: #222;
-    --secondColor: #fff;
+    --primeColor: #0a2b3b;
+    --secondColor: #00abff;
+    --white: #222;
+    --black: #fff;
 }
 
 h1,

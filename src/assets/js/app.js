@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector("#year").innerHTML = new Date().getFullYear();
 
-    slider("#offers .le-slider-container", true, 10);
+    slider("#offers .le-slider-container");
 
     (function () {
         var themeToggle = document.querySelector("#hero .label input");
