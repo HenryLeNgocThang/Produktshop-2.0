@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slider("#offers .le-slider-container", false);
 
-    var themeToggle = document.querySelector("#hero .label");
+    (function() {
+        var themeToggle = document.querySelector("#hero .label input");
+        var themeContainer = document.querySelector("#theme-mode");
 
-    themeToggle.addEventListener("onclick", () => {
-        var modes = ["dark", "light"];
-        var state = modes[1];
-
-        if (state == modes[1]) {
-            state == modes[0];
-        } else {
-            state == modes[0];
-        }
-
-        console.log(state);
-    });
+        themeToggle.addEventListener("click", () => {
+            if (themeToggle.checked == true) {
+                themeContainer.classList.remove("light-mode");
+                themeContainer.classList.add("dark-mode");
+            } else {
+                themeContainer.classList.remove("dark-mode");
+                themeContainer.classList.add("light-mode");
+            }
+        });
+    })();
 });
