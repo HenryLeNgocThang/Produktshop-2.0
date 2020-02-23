@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#year").innerHTML = new Date().getFullYear();
 
     slider("#offers .le-slider-container");
+    slider("#offers-2 .le-slider-container");
 
     (function () {
         var themeToggle = document.querySelector("#hero .label input");
@@ -49,5 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
             circle.style.left = xp + "px";
             circle.style.top = yp + "px";
         }, 1000 / 60);
+    })();
+
+    (function() {
+
     })();
 });
