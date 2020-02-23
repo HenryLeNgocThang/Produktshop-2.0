@@ -21,8 +21,12 @@
     </div>
 
     <div class="hero-gooey le-gooey-effect">
-        <img class="hero-top" src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/liquid.svg" alt="Liquid GmbH">
-        <img class="hero-bottom" src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/liquid.svg" alt="Liquid GmbH">
+        <div class="hero-top">
+        {{> hero-overlay }}
+        </div>
+        <div class="hero-bottom">
+        {{> hero-overlay }}
+        </div>
         <a class="hero-button" href="#recommends">
             <span></span>
             <p>GO!</p>

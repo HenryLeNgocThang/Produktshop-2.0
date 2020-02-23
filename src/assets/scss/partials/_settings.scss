@@ -1,29 +1,29 @@
 $primary-color: var(--primeColor);
 $secondary-color: var(--secondColor);
-$black: var(--black);
-$white: var(--white);
 // $primary-color: #00abff;
 // $secondary-color: #0a2b3b;
-// $black: #222;
-// $white: #fff;
+$black: #222;
+$white: #fff;
 $primary-font-color: $black;
 $secondary-font-color: $white;
 $transition-duration: .4s;
 $body-font: "Open Sans", sans-serif;
 $headline-font: "Dosis", sans-serif;
+$light: var(--light);
+$dark: var(--dark);
 
 body.light-mode {
     --primeColor: #00abff;
     --secondColor: #0a2b3b;
-    --white: #fff;
-    --black: #222;
+    --light: #fff;
+    --dark: #222;
 }
 
 body.dark-mode {
     --primeColor: #0a2b3b;
     --secondColor: #00abff;
-    --white: #222;
-    --black: #fff;
+    --light: #222;
+    --dark: #fff;
 }
 
 h1,
@@ -72,7 +72,7 @@ a {
             left: 0;
             height: 100%;
             width: 200%;
-            background: $primary-color;
+            background: $secondary-color;
             transform: translate(-100%, 0);
             transition: transform 0.05s 0.15s ease-in-out;
         }

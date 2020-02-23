@@ -142,9 +142,9 @@
     }
 
     .navbar-menu {
-        background-color: $secondary-color;
+        background-color: $primary-color;
         border-radius: 50%;
-        transition: all $transition-duration ease-out;
+        transition: all $transition-duration ease-in-out;
 
         a {
             position: absolute;
@@ -154,12 +154,12 @@
             transform: translate(-50%, -50%);
             width: 60px;
             height: 60px;
-            background-color: $secondary-color;
+            background-color: $primary-color;
             border-radius: 50%;
             text-align: center;
             color: $white;
             padding-top: 20px;
-            color: $secondary-color;
+            color: $primary-color;
             transition: transform $transition-duration ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
         }
 
