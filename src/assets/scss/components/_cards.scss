@@ -1,0 +1,86 @@
+#cards {
+    background-color: $light;
+
+    h2 {
+        color: $dark;
+    }
+
+    .cards-container {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 55px;
+        padding-top: 55px;
+        overflow-x: scroll;
+        margin-right: 10px;
+
+        @include breakpoint(medium) {
+            padding-right: calc(10% + 10px);
+            padding-top: 0;
+            overflow-x: visible;
+            margin-right: 0;
+        }
+
+        .cards-wrapper {
+            flex: 1;
+            min-width: 150px;
+            margin-right: 0;
+
+            @include breakpoint(medium) {
+                margin-right: 10px;
+                min-width: 1px;
+            }
+
+            .cards-item {
+                display: block;
+                height: auto;
+                background: $white;
+                border-radius: 4px;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+                transition: all .2s ease-in-out;
+                position: relative;
+                width: 100%;
+                min-width: 250px;
+                z-index: 1;
+
+                @include breakpoint(medium) {
+                    width: 200%;
+                    min-width: 100px;
+                }
+
+                &:hover {
+                    z-index: 2;
+                    transform: translateY(-10%);
+                    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+                }
+        
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-top-right-radius: 4px;
+                    border-top-left-radius: 4px;
+                }
+        
+                button.shopping-cart {
+                    position: absolute;
+                    top: 0;
+                    right: 50%;
+                    transform: translate(50%, -50%);
+        
+                    @include breakpoint(medium) {
+                        right: 0;
+                    }
+                }
+        
+                .cards-content {
+                    padding: 10px;
+        
+                    h3 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

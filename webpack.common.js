@@ -9,7 +9,9 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
-    app: Path.join(__dirname, 'src/entries/index.js'),
+    app: Path.join(__dirname, 'src/entries/app.js'),
+    index: Path.join(__dirname, 'src/entries/index.js'),
+    favorites: Path.join(__dirname, 'src/entries/favorites.js'),
   },
   output: {
     path: Path.join(__dirname, 'dist'),
@@ -38,8 +40,19 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       config: config,
-      chunks: ['app'],
+      chunks: ['app', 'index'],
       template: Path.resolve(__dirname, 'src/pages/index.hbs'),
+      minify: {
+        collapseWhitespace: isProduction ? true : false,
+        removeComments: isProduction ? true : false,
+      },
+      assetPath: isProduction ? "~/" : config.assetPath
+    }),
+    new HtmlWebpackPlugin({
+      config: config,
+      chunks: ['app', 'favorites'],
+      template: Path.resolve(__dirname, 'src/pages/favorites.hbs'),
+      filename: 'favorites.html',
       minify: {
         collapseWhitespace: isProduction ? true : false,
         removeComments: isProduction ? true : false,

@@ -3,13 +3,13 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: url("../img/hero-background.jpg") center no-repeat;
+    background: url("../img/final-fantasy-xv.jpg") center no-repeat;
     background-size: cover;
 
     .label {
         position: absolute;
         right: 50px;
-        top: 30px;
+        top: 55px;
 
         &:after,
         &:before {
@@ -29,50 +29,6 @@
             margin-left: 10px;
             color: $secondary-color;
         }
-    }
-
-    .hero-top,
-    .hero-bottom {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        width: 100%;
-        height: 50px;
-
-        path {
-            transition: all $transition-duration ease-in-out;
-        }
-
-        path:nth-child(odd) {
-            fill: $light;
-        }
-
-        path:nth-child(even) {
-            fill: $dark;
-        }
-
-        @include breakpoint(medium) {
-            height: 50px;
-        }
-
-        @include breakpoint(large) {
-            height: 70px;
-        }
-
-        @include breakpoint(desktop) {
-            height: 100px;
-        }
-    }
-
-    .hero-top {
-        top: -2%;
-        transform: rotate(180deg);
-    }
-
-    .hero-bottom {
-        bottom: -2%;
     }
 
     .hero-text {
@@ -109,6 +65,18 @@
         height: 100%;
         z-index: 5;
 
+        .hero-wave {
+            z-index: 1;
+            background: url("../img/wave.svg") repeat-x;
+            position: absolute;
+            bottom: 0;
+            width: 3200px;
+            height: 95px;
+            animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            fill: $light;
+            transform: translateX(0);
+        }
+
         .hero-button {
             display: block;
             width: 50px;
@@ -135,6 +103,7 @@
         }
 
         .hero-circle {
+            display: none;
             position: absolute;
             z-index: 4;
             background: $primary-color;
@@ -143,6 +112,10 @@
             border-radius: 50%;
             pointer-events: none;
             transition: background-color $transition-duration ease-in-out;
+
+            @include breakpoint(large) {
+                display: block;
+            }
         }
     }
 }
@@ -204,5 +177,15 @@
         width: 0;
         height: 0;
         right: -30%;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-1600px);
     }
 }

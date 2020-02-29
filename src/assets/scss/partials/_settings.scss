@@ -100,21 +100,45 @@ a {
     }
 }
 
+button.shopping-cart {
+    background: $secondary-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    transition: all $transition-duration ease-in-out;
+
+    &:before {
+        content: "\f004";
+        font-family: "FontAwesome";
+        color: $light;
+        transition: all $transition-duration ease-in-out;
+    }
+
+    &.added-favorite {
+        background: $dark;
+
+        &:before {
+            color: #f00;
+        }
+    }
+}
+
 @mixin breakpoint($size) {
     @if $size==medium {
-        @media only screen and (min-width: 480px) and (min-height: 500px) {
+        @media only screen and (min-width: 481px) and (min-height: 500px) {
             @content;
         }
     }
 
     @else if $size==large {
-        @media only screen and (min-width: 768px) and (min-height: 500px) {
+        @media only screen and (min-width: 769px) and (min-height: 500px) {
             @content;
         }
     }
 
     @else if $size==desktop {
-        @media only screen and (min-width: 1024px) and (min-height: 500px) {
+        @media only screen and (min-width: 1025px) and (min-height: 500px) {
             @content;
         }
     }

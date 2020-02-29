@@ -1,4 +1,4 @@
-<section id="hero">
+<div id="hero">
     <label class="label">
         <div class="toggle">
             <input class="toggle-state" type="checkbox" />
@@ -12,7 +12,7 @@
         <div class="le-container">
             <div class="le-row">
                 <div class="le-cell-6">
-                    <img src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/logo.svg" alt="Liquid Logo">
+                    <img data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/logo.svg">
                     <h1>Liquid</h1>
                     <h2>Die zentrale für deine PC-Spiele!</h2>
                 </div>
@@ -21,12 +21,7 @@
     </div>
 
     <div class="hero-gooey le-gooey-effect">
-        <div class="hero-top">
-        {{> hero-overlay }}
-        </div>
-        <div class="hero-bottom">
-        {{> hero-overlay }}
-        </div>
+        <div class="hero-wave"></div>
         <a class="hero-button" href="#recommends">
             <span></span>
             <p>GO!</p>
@@ -34,4 +29,4 @@
         </a>
         <span class="hero-circle"></span>
     </div>
-</section>
+</div>

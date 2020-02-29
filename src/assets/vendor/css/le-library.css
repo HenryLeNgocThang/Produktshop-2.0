@@ -83,7 +83,7 @@ body {
 }
 
 /* Tablet */
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 481px) {
     .le-container {
         width: 90%;
     }
@@ -98,7 +98,7 @@ body {
 }
 
 /* Laptop */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .le-container {
         width: 80%;
     }
@@ -117,7 +117,7 @@ body {
 }
 
 /* Desktop */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
     .le-container {
         width: 80%;
     }
@@ -177,7 +177,7 @@ p, a, li {
 }
 
 /* Laptop */
-@media only screen and (min-width: 768px) and (min-height: 600px) {
+@media only screen and (min-width: 769px) and (min-height: 600px) {
     h1 {
         font-size: 4.5rem;
     }
@@ -196,7 +196,7 @@ p, a, li {
 }
 
 /* Desktop */
-@media only screen and (min-width: 1024px) and (min-height: 600px) {
+@media only screen and (min-width: 1025px) and (min-height: 600px) {
     h1 {
         font-size: 5rem;
     }
@@ -367,4 +367,15 @@ p, a, li {
     to {
         transform: translate(0%);
     }
+}
+
+img[data-src] {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 1s ease-in-out;
+}
+
+img[data-load=true] {
+    opacity: 1;
+    transform: translateY(0);
 }

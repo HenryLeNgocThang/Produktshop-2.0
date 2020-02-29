@@ -4,7 +4,8 @@
     {{/if}}
     {{# if image}}
         <div class="offer-image">
-            <img src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/offers/{{image}}" alt="">
+            <img data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/offers/{{image}}"
+                alt="{{# if alt}}{{alt}}{{/if}}">
         </div>
     {{/if}}
     <div class="offer-text">
@@ -15,10 +16,10 @@
             <div class="le-cell-3">
                 <div class="le-column">
                     <div class="le-cell-3">
-                        <p class="offer-precoast">{{#if precoast}}{{precoast}}{{else}}100,00 €{{/if}}</p>
+                        <p class="offer-precoast">{{#if precoast}}{{precoast}}{{else}}40,00 €{{/if}}</p>
                     </div>
                     <div class="le-cell-3">
-                        <p class="offer-coast">{{#if coast}}{{coast}}{{else}}50,00 €{{/if}}</p>
+                        <p class="offer-coast">{{#if coast}}{{coast}}{{else}}20,00 €{{/if}}</p>
                     </div>
                 </div>
             </div>

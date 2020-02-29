@@ -9,11 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    simpleLazyLoader();
     document.querySelector("#year").innerHTML = new Date().getFullYear();
 
-    slider("#offers .le-slider-container");
-    slider("#offers-2 .le-slider-container");
-
+    // TOGGLE BTN FOR DARKMODE
     (function () {
         var themeToggle = document.querySelector("#hero .label input");
         var body = document.querySelector("body");
@@ -29,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })();
 
+    // HERO FOLLOWING CIRCLE
     (function () {
         var hero = document.querySelector("#hero");
         var circle = hero.querySelector(".hero-circle");
@@ -52,7 +52,48 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000 / 60);
     })();
 
-    (function() {
+    // FAVORITES
+    (function () {
+        var cartBtns = document.querySelectorAll(".shopping-cart");
+        var gameJSON;
+        var favorites = [];
+        var saved;
+    
+        if (localStorage.getItem("favorite-games") !== null) {
+            saved = JSON.parse(localStorage.getItem("favorite-games"));
+        } else {
+            localStorage.clear("favorite-games");
+            saved = [];
+        }
 
+        loadJSON(function (response) {
+            gameJSON = JSON.parse(response);
+
+            for (let i = 0; i < cartBtns.length; i++) {
+                cartBtns[i].addEventListener("click", () => {
+
+                    if (favorites.indexOf(gameJSON.games[cartBtns[i].dataset.game]) != -1) {
+                        favorites.splice(favorites.indexOf(gameJSON.games[cartBtns[i].dataset.game]), 1);
+                        cartBtns[i].classList.remove("added-favorite");
+                        localStorage.setItem("favorite-games", JSON.stringify(favorites));
+                    } else {
+                        favorites.push(gameJSON.games[cartBtns[i].dataset.game]);
+                        cartBtns[i].classList.add("added-favorite");
+                        localStorage.setItem("favorite-games", JSON.stringify(favorites));
+                    }
+                });
+
+                for (let j = 0; j < saved.length; j++) {
+                    if (gameJSON.games[cartBtns[i].dataset.game].article_number == saved[j].article_number) {
+                        cartBtns[i].classList.add("added-favorite");
+                        favorites.push(gameJSON.games[cartBtns[i].dataset.game]);
+
+                        if (j == saved.length - 1) {
+                            localStorage.setItem("favorite-games", JSON.stringify(favorites));
+                        }
+                    }
+                }
+            }
+        });
     })();
 });

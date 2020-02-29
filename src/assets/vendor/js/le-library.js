@@ -1,3 +1,4 @@
+/////////////////// CALCULATES ///////////////////
 function distanceBetween(x_Position1 = 0, x_Position2 = 0, y_Position1 = 0, y_Position2 = 0) {
     let distance;
     distance = Math.sqrt(
@@ -29,6 +30,7 @@ function closestNumber(array = [], target_number) {
     });
 }
 
+/////////////////// FANCY STUFF ///////////////////
 function countUp(from = 0, to = 0, element = "body", return_type = "", timing_function) {
     var elm = document.querySelector(element);
     var delay = 1;
@@ -363,4 +365,92 @@ function slider(sliderContainer, autoplay = false, speed_in_seconds = 5) {
 
         array.push(element);
     }
+}
+
+function simpleLazyLoader() {
+    var objects = document.images;
+    var images = [];
+    var downloadImage = new Image();
+    var observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type == "attributes") {
+                for (let i = 0; i < images.length; i++) {
+                    downloadImage.src = images[i].dataset.src;
+                }
+            }
+        });
+    });
+
+    // Parse objects from HTMLCollection to array
+    for (let i = 0; i < objects.length; i++) {
+        images.push(objects[i]);
+
+        observer.observe(images[i], {
+            attributes: true
+        });
+
+        if (images[i].getBoundingClientRect().top >= 0 &&
+            images[i].getBoundingClientRect().bottom <= window.innerHeight
+        ) {
+            images[i].dataset.load = true;
+        }
+    }
+
+    document.addEventListener("scroll", () => {
+        if (images.length > 0) {
+            for (let i = 0; i < images.length; i++) {
+                if (images[i].dataset.load != true) {
+                    if (images[i].getBoundingClientRect().top >= 0 &&
+                        images[i].getBoundingClientRect().bottom <= window.innerHeight
+                    ) {
+                        images[i].dataset.load = true;
+                    }
+                }
+            }
+        }
+    });
+
+    downloadImage.onload = function () {
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].dataset.load) {
+                images[i].src = images[i].dataset.src;
+                images.splice(i, 1);
+            }
+        }
+    };
+}
+
+/////////////////// USEFULL FUNCTIONS ///////////////////
+function containsObject(obj, arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === obj) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function containsValue(value, arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].article_number === value) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function loadJSON(callback) {
+    var object = new XMLHttpRequest();
+
+    object.overrideMimeType("application/json");
+    object.open("GET", "assets/vendor/json/games.json", true);
+    object.onreadystatechange = function () {
+        if (object.readyState == 4 && object.status == "200") {
+            callback(object.responseText);
+        }
+    };
+
+    object.send(null);
 }

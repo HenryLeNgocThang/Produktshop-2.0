@@ -1,0 +1,44 @@
+{
+    "games": {
+        "skyrim": {
+            "article_number": 1001,
+            "title": "The Elder Scrolls V: Skyrim",
+            "price": "3,99 €"
+        },
+        "the_witcher_3": {
+            "article_number": 1002,
+            "title": "the Witcher 3: Wild Hunt",
+            "price": "99,99 €"
+        },
+        "monster_hunter_world": {
+            "article_number": 1003,
+            "title": "Monster Hunter World",
+            "price": "21,00 €"
+        },
+        "forza_horizon_4": {
+            "article_number": 1004,
+            "title": "Forza Horizon 4",
+            "price": "3,99 €"
+        },
+        "assassins_creed_odyssey": {
+            "article_number": 1005,
+            "title": "Assassins Creed Odyssey",
+            "price": "3,99 €"
+        },
+        "transport_fever_2": {
+            "article_number": 1006,
+            "title": "Transport Fever 2",
+            "price": "40,00 €"
+        },
+        "naruto_storm_4": {
+            "article_number": 1007,
+            "title": "Naruto Shippuden Ultimate Ninja Storm 4",
+            "price": "40,00 €"
+        },
+        "final_fantasy_xv": {
+            "article_number": 1008,
+            "title": "Final Fantasy XV",
+            "price": "40,00 €"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<div class="cards-wrapper">
+    <div class="cards-item">
+        {{# if image}}
+        <img data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/{{image}}"
+            alt="{{# if alt}}{{alt}}{{/if}}">
+        {{/if}}
+        <button class="shopping-cart" {{# if data-game}}data-game="{{data-game}}"{{/if}}></button>
+        <div class="cards-content">
+            {{# if headline}}
+            {{{headline}}}
+            {{else}}
+            <h4>Headline</h4>
+            {{/if}}
+
+            {{# if text}}
+            {{{text}}}
+            {{else}}
+            <p>cards</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
