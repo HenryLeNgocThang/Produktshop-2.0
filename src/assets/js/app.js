@@ -60,6 +60,43 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })();
 
+    // NAVBAR FORM
+    (function() {
+        let forms = document.querySelectorAll(".navbar .navbar-dropdown-item form");
+        let btnLogin = document.querySelectorAll(".switch-to-login");
+        let btnRecover = document.querySelectorAll(".switch-to-recover");
+        let btnRegister = document.querySelectorAll(".switch-to-register");
+
+        for (let i = 1; i < forms.length; i++) {
+            forms[i].classList.add("hide");
+        }
+
+        btnLogin.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                forms[0].classList.remove("hide");
+                forms[1].classList.add("hide");
+                forms[2].classList.add("hide");
+            });
+        });
+        
+        btnRecover.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                forms[1].classList.remove("hide");
+                forms[0].classList.add("hide");
+                forms[2].classList.add("hide");
+
+            });
+        });
+
+        btnRegister.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                forms[2].classList.remove("hide");
+                forms[1].classList.add("hide");
+                forms[0].classList.add("hide");
+            });
+        });
+    })();
+
     // HERO FOLLOWING CIRCLE
     (function () {
         let hero = document.querySelector("#hero");

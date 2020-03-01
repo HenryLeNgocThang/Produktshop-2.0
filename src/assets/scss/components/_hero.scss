@@ -9,7 +9,11 @@
     .label {
         position: absolute;
         right: 20px;
-        top: 10px;
+        top: 55px;
+
+        @include breakpoint(desktop) {
+            top: 8px;
+        }
 
         &:after,
         &:before {

@@ -1,25 +1,75 @@
 <nav class="navbar">
     <ul class="navbar-menu">
-        <label>
-            <li>
-                <input type="radio" name="navbar-lists" href="#">
-                <a title="Log In" href="#">Log In</a>
-            </li>
-            <li>
-                <input type="radio" name="navbar-lists" href="#">
-                <a title="Einstellungen" href="#">Einstellungen</a>
-            </li>
-            <li>
-                <input type="radio" name="navbar-lists" href="#">
-                <a title="Favoriten" href="#">Favoriten</a>
-            </li>
-        </label>
+        <li class="navbar-dropdown">
+            <a><i class="fa fa-user-circle"></i></a>
+            <div class="navbar-dropdown-item">
+                <form id="login" autocomplete="off">
+                    <label class="username" for="username">Benutzername</label>
+                    <input type="text" name="username" placeholder="Benutzername eingeben">
+                    <label class="password" for="password">Passwort</label>
+                    <input type="password" name="password" placeholder="Passwort eingeben ">
+                    <label>
+                        <input type="checkbox" name="remember"> Angemeldet bleiben
+                    </label>
+                    <input type="submit" value="Login">
+                    <label>
+                        <input type="radio" name="navbar-form-switcher">
+                        <span class="switch-to-recover">Passwort vergessen?</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="navbar-form-switcher">
+                        <span class="switch-to-register">Kein Konto? Hier registrieren</span>
+                    </label>
+                </form>
+                <form id="recover" autocomplete="off">
+                    <label class="email" for="email">E-Mail</label>
+                    <input type="text" name="email" placeholder="E-Mail eingeben">
+                    <input type="submit" value="Passwort anfordern">
+                    <label>
+                        <input type="radio" name="navbar-form-switcher">
+                        <span class="switch-to-register">Kein Konto? Hier registrieren</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="navbar-form-switcher">
+                        <span class="switch-to-login">Konto vorhanden? Hier einloggen</span>
+                    </label>
+                </form>
+                <form id="register" autocomplete="off">
+                    <label class="username" for="username">Benutzername</label>
+                    <input type="text" name="username" placeholder="Benutzername eingeben">
+                    <label class="email" for="email">E-Mail</label>
+                    <input type="text" name="email" placeholder="E-Mail eingeben">
+                    <label class="password" for="password">Passwort</label>
+                    <input type="password" name="password" placeholder="Passwort eingeben ">
+                    <label class="password" for="password-submit">Passwort bestätigen</label>
+                    <input type="password" name="password-submit" placeholder="Passwort bestätigen ">
+                    <input type="submit" value="Passwort anfordern">
+                    <label>
+                        <input type="radio" name="navbar-form-switcher">
+                        <span class="switch-to-login">Konto vorhanden? Hier einloggen</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="navbar-form-switcher">
+                        <span class="switch-to-recover">Passwort vergessen?</span>
+                    </label>
+                </form>
+            </div>
+        </li>
         <li>
-            <a title="Warenkorb" href="#"><i class="fa fa-shopping-cart no-arrow" aria-hidden="true"></i></a>
+            <a title="Warenkorb"><i class="fa fa-shopping-cart no-arrow" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a title="Einstellungen">Einstellungen</a>
+        </li>
+        <li class="navbar-dropdown">
+            <a title="Favoriten">Favoriten</a>
+            <div class="navbar-dropdown-item">
+                <h2>Dropdown :D</h2>
+            </div>
         </li>
         <li>
             <label>
-                <input type="checkbox" href="#" class="navbar-checkbox" />
+                <input type="checkbox" class="navbar-checkbox" />
                 <input id="navbar-search-input" type="text" list="navbar-search-datalist" class="navbar-input">
                 <datalist id="navbar-search-datalist">
                 </datalist>
