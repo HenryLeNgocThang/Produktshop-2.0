@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // TOGGLE BTN FOR DARKMODE
     (function () {
-        var themeToggle = document.querySelector("#hero .label input");
-        var body = document.querySelector("body");
+        let themeToggle = document.querySelector("#hero .label input");
+        let body = document.querySelector("body");
 
         themeToggle.addEventListener("click", () => {
             if (themeToggle.checked == true) {
@@ -28,15 +28,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })();
 
+    // NAVBAR SEARCH INPUT
+    (function() {
+        let searchInput = document.querySelector("#navbar-search-input");
+        let datalist = document.querySelector("#navbar-search-datalist");
+        let gameJSON;
+        let gameArray;
+        let options = [];
+
+        loadJSON(function (response) {
+            gameJSON = JSON.parse(response);
+            gameArray = Object.values(gameJSON.games);
+
+            for (let i = 0; i < gameArray.length; i++) {
+                createElement(options, "option", "value", gameArray[i].title, gameArray[i].title);
+                datalist.appendChild(options[i]);
+            }
+        });
+
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key == "Enter") {
+                console.log(searchInput.value);
+            }
+        });
+    })();
+
     // HERO FOLLOWING CIRCLE
     (function () {
-        var hero = document.querySelector("#hero");
-        var circle = hero.querySelector(".hero-circle");
-        var mouseX = 0,
+        let hero = document.querySelector("#hero");
+        let circle = hero.querySelector(".hero-circle");
+        let mouseX = 0,
             mouseY = 0;
-        var xp = 0,
+        let xp = 0,
             yp = 0;
-        var lerp = 2;
+        let lerp = 2;
 
         hero.addEventListener("mousemove", (e) => {
             mouseX = e.pageX - circle.getBoundingClientRect().width / 2;
@@ -54,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // FAVORITES
     (function () {
-        var cartBtns = document.querySelectorAll(".shopping-cart");
-        var gameJSON;
-        var favorites = [];
-        var saved;
+        let cartBtns = document.querySelectorAll(".shopping-cart");
+        let gameJSON;
+        let favorites = [];
+        let saved;
     
         if (localStorage.getItem("favorite-games") !== null) {
             saved = JSON.parse(localStorage.getItem("favorite-games"));

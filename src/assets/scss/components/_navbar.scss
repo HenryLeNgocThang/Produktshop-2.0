@@ -212,19 +212,23 @@
             padding: 0 10px;
             color: $secondary-color;
 
-            .navbar-input {
-                width: 0;
-                opacity: 0;
-                transition: all $transition-duration ease-in-out;
-            }
+            label {
+                cursor: pointer;
 
-            .navbar-checkbox {
-                display: none;
-            }
-
-            .navbar-checkbox:checked~.navbar-input {
-                width: 200px;
-                opacity: 1;
+                .navbar-input {
+                    width: 0;
+                    opacity: 0;
+                    transition: all $transition-duration ease-in-out;
+                }
+    
+                .navbar-checkbox {
+                    display: none;
+                }
+    
+                .navbar-checkbox:checked~.navbar-input {
+                    width: 200px;
+                    opacity: 1;
+                }
             }
 
             a {

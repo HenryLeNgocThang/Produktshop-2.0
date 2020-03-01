@@ -248,8 +248,8 @@ function slider(sliderContainer, autoplay = false, speed_in_seconds = 5) {
     slider.style.left = 0;
     slider.style.width = width * slides.length + "px";
 
-    createElement(scrolls, "button", "le-slide-prev", "〈");
-    createElement(scrolls, "button", "le-slide-next", "〉");
+    createElement(scrolls, "button", "class", "le-slide-prev", "〈");
+    createElement(scrolls, "button", "class", "le-slide-next", "〉");
 
     scrolls.forEach(element => {
         container.appendChild(element);
@@ -260,10 +260,10 @@ function slider(sliderContainer, autoplay = false, speed_in_seconds = 5) {
     }
 
     if (autoplay) {
-        createElement(loader.bar, "div", "le-slider-bar");
+        createElement(loader.bar, "div", "class", "le-slider-bar");
         container.appendChild(loader.bar[0]);
 
-        createElement(loader.progress, "div", "le-slider-progress");
+        createElement(loader.progress, "div", "class", "le-slider-progress");
         loader.bar[0].appendChild(loader.progress[0]);
 
         loader.progress[0].style.animationDuration = speed_in_seconds + "s";
@@ -273,7 +273,7 @@ function slider(sliderContainer, autoplay = false, speed_in_seconds = 5) {
     //////////////////////////////////////////
 
     if (autoplay) {
-        createElement(state, "div", "le-slider-state");
+        createElement(state, "div", "class", "le-slider-state");
         container.appendChild(state[0]);
         state[0].classList.add("le-slider-play");
         var autoplayInterval = setInterval(autoplayer, speed_in_seconds * 1000);
@@ -356,14 +356,6 @@ function slider(sliderContainer, autoplay = false, speed_in_seconds = 5) {
             current = 0;
             slider.style.left = current + "px";
         }
-    }
-
-    function createElement(array, tag = "div", classname = "", text = "") {
-        var element = document.createElement(tag);
-        element.setAttribute("class", classname);
-        element.textContent = text;
-
-        array.push(element);
     }
 }
 
@@ -453,4 +445,12 @@ function loadJSON(callback) {
     };
 
     object.send(null);
+}
+
+function createElement(array, tag = "div", attribute = "", value = "", text = "") {
+    var element = document.createElement(tag);
+    element.setAttribute(attribute, value);
+    element.textContent = text;
+
+    array.push(element);
 }
