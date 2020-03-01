@@ -35,13 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
         let gameJSON;
         let gameArray;
         let options = [];
+        let gameTitle = [];
 
         loadJSON(function (response) {
             gameJSON = JSON.parse(response);
             gameArray = Object.values(gameJSON.games);
 
             for (let i = 0; i < gameArray.length; i++) {
-                createElement(options, "option", "value", gameArray[i].title, gameArray[i].title);
+                gameTitle.push(gameArray[i].title);
+            }
+
+            gameTitle.sort();
+
+            for (let i = 0; i < gameTitle.length; i++) {
+                createElement(options, "option", "value", gameTitle[i], gameTitle[i]);
                 datalist.appendChild(options[i]);
             }
         });

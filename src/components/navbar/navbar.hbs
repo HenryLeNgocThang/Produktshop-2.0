@@ -1,23 +1,27 @@
 <nav class="navbar">
     <ul class="navbar-menu">
+        <label>
+            <li>
+                <input type="radio" name="navbar-lists" href="#">
+                <a title="Log In" href="#">Log In</a>
+            </li>
+            <li>
+                <input type="radio" name="navbar-lists" href="#">
+                <a title="Einstellungen" href="#">Einstellungen</a>
+            </li>
+            <li>
+                <input type="radio" name="navbar-lists" href="#">
+                <a title="Favoriten" href="#">Favoriten</a>
+            </li>
+        </label>
         <li>
-            <a title="Log In" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Log In</a>
-        </li>
-        <li>
-            <a title="Einstellungen" href="#"><i class="fa fa-cog" aria-hidden="true"></i>Einstellungen</a>
-        </li>
-        <li>
-            <a title="Warenkorb" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Warenkorb</a>
-        </li>
-        <li>
-            <a title="Favoriten" href="#"><i class="fa fa-heart" aria-hidden="true"></i>Favoriten</a>
+            <a title="Warenkorb" href="#"><i class="fa fa-shopping-cart no-arrow" aria-hidden="true"></i></a>
         </li>
         <li>
             <label>
                 <input type="checkbox" href="#" class="navbar-checkbox" />
                 <input id="navbar-search-input" type="text" list="navbar-search-datalist" class="navbar-input">
                 <datalist id="navbar-search-datalist">
-                    <option value="asdf">asdf</option>
                 </datalist>
                 <i class="fa fa-search" aria-hidden="true"></i> Suche
             </label>

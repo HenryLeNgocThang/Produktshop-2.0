@@ -175,11 +175,11 @@
             &:nth-child(2) {
                 transition: transform $transition-duration .3s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
             }
-            
+
             &:nth-child(3) {
                 transition: transform $transition-duration .2s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
             }
-            
+
             &:nth-child(4) {
                 transition: transform $transition-duration .1s ease-out, background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
             }
@@ -195,17 +195,41 @@
     background: $light;
     width: 100vw;
     transition: all $transition-duration ease-in-out;
-    padding: 10px 100px;
+    padding: 10px;
     box-shadow: 0 -5px 15px 0 rgba(0, 0, 0, 0.5);
 
     @include breakpoint(large) {
         display: block;
     }
 
-    ul {
+    @include breakpoint(desktop) {
+        padding: 10px 150px;
+    }
+
+    ul.navbar-menu {
         margin: 0;
         padding: 0;
         list-style-type: none;
+
+        >li {
+
+            &:nth-last-child(2),
+            &:last-child {
+                float: right;
+            }
+        }
+
+        >label {
+            li {
+                input[type=radio] {
+                    display: none;
+
+                    &:checked~a {
+                        color: #f00;
+                    }
+                }
+            }
+        }
 
         li {
             display: inline-block;
@@ -220,13 +244,13 @@
                     opacity: 0;
                     transition: all $transition-duration ease-in-out;
                 }
-    
+
                 .navbar-checkbox {
                     display: none;
                 }
-    
+
                 .navbar-checkbox:checked~.navbar-input {
-                    width: 200px;
+                    width: 250px;
                     opacity: 1;
                 }
             }
@@ -234,6 +258,13 @@
             a {
                 text-decoration: none;
                 color: $secondary-color;
+
+                &:after {
+                    content: "›";
+                    display: inline-block;
+                    margin-left: 10px;
+                    transform: rotateZ(90deg);
+                }
 
                 i {
                     margin-right: 5px;
