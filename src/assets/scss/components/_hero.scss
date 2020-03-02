@@ -69,17 +69,45 @@
         height: 100%;
         z-index: 5;
 
+        // .hero-wave {
+        //     z-index: 1;
+        //     background: url("../img/wave.svg") repeat-x;
+        //     position: absolute;
+        //     bottom: 0;
+        //     width: 300%;
+        //     min-width: 3200px;
+        //     height: 95px;
+        //     animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+        //     fill: $light;
+        //     transform: translateX(0);
+        // }
+
         .hero-wave {
             z-index: 1;
-            background: url("../img/wave.svg") repeat-x;
             position: absolute;
             bottom: 0;
-            width: 300%;
-            min-width: 3200px;
+            width: 1600px;
             height: 95px;
-            animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-            fill: $light;
-            transform: translateX(0);
+
+            &:first-child {
+                transform: translateX(0);
+                animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            }
+
+            &:nth-child(2) {
+                transform: translateX(1600px);
+                animation: wave2 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            }
+            
+            &:nth-child(3) {
+                transform: translateX(3200px);
+                animation: wave3 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            }
+
+            .hero-wave-path {
+                fill: $light;
+                transition: all $transition-duration ease-in-out;
+            }
         }
 
         .hero-button {
@@ -192,5 +220,25 @@
 
     100% {
         transform: translateX(-1600px);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        transform: translateX(1600px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes wave3 {
+    0% {
+        transform: translateX(3200px);
+    }
+
+    100% {
+        transform: translateX(1600px);
     }
 }

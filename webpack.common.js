@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./config.json');
 const isProduction = process.env.NODE_ENV === 'production';
+const isPreproduction = process.env.NODE_ENV === 'preproduction';
 
 module.exports = {
   entry: {
@@ -43,10 +44,10 @@ module.exports = {
       chunks: ['app', 'index'],
       template: Path.resolve(__dirname, 'src/pages/index.hbs'),
       minify: {
-        collapseWhitespace: isProduction ? true : false,
-        removeComments: isProduction ? true : false,
+        collapseWhitespace: isPreproduction ? false : true,
+        removeComments: isPreproduction ? false : true,
       },
-      assetPath: isProduction ? "~/" : config.assetPath
+      assetPath: isProduction || isPreproduction ? config.assetPath : ""
     }),
     new HtmlWebpackPlugin({
       config: config,
@@ -54,10 +55,10 @@ module.exports = {
       template: Path.resolve(__dirname, 'src/pages/favorites.hbs'),
       filename: 'favorites.html',
       minify: {
-        collapseWhitespace: isProduction ? true : false,
-        removeComments: isProduction ? true : false,
+        collapseWhitespace: isPreproduction ? false : true,
+        removeComments: isPreproduction ? false : true,
       },
-      assetPath: isProduction ? "~/" : config.assetPath
+      assetPath: isProduction || isPreproduction ? config.assetPath : ""
     }),
     new HtmlWebpackPlugin({
       config: config,
@@ -65,10 +66,10 @@ module.exports = {
       template: Path.resolve(__dirname, 'src/pages/impressum.hbs'),
       filename: 'impressum.html',
       minify: {
-        collapseWhitespace: isProduction ? true : false,
-        removeComments: isProduction ? true : false,
+        collapseWhitespace: isPreproduction ? false : true,
+        removeComments: isPreproduction ? false : true,
       },
-      assetPath: isProduction ? "~/" : config.assetPath
+      assetPath: isProduction || isPreproduction ? config.assetPath : ""
     })
   ],
   resolve: {
