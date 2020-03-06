@@ -1,7 +1,10 @@
 .offers {
     width: 100%;
     height: auto;
-    background-color: $primary-color;
+
+    h2 {
+        color: $dark;
+    }
 
     .le-slider {
         display: flex;
@@ -22,7 +25,6 @@
         align-items: center;
         flex-wrap: wrap;
         height: 100%;
-        padding: 50px 0;
 
         @include breakpoint(medium) {
             width: 80%;
@@ -90,10 +92,12 @@
                     color: $secondary-color;
                     border-right: 2px solid $secondary-color;
                     border-left: 2px solid $secondary-color;
+                    font-weight: bold;
                 }
     
                 .offer-precoast {
                     text-decoration: line-through;
+                    color: #f00;
 
                     @include breakpoint(large) {
                         border-top-right-radius: 4px;

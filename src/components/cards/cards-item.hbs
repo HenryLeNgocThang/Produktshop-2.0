@@ -4,7 +4,9 @@
         <img data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/{{image}}"
             alt="{{# if alt}}{{alt}}{{/if}}">
         {{/if}}
+
         <button class="shopping-cart" {{# if data-game}}data-game="{{data-game}}"{{/if}}></button>
+        {{card-data-game}}
         <div class="cards-content">
             {{# if headline}}
             {{{headline}}}

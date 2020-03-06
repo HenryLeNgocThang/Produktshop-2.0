@@ -1,0 +1,36 @@
+<div class="le-container">
+    <div class="le-row le-padding-x">
+        <div class="le-cell-6">
+            <div class="quote-content">
+                <div class="le-row">
+                    {{# if image}}
+                        <div class="le-cell-3">
+                            <div class="quote-image">
+                                <img data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/offers/{{image}}"
+                                    alt="{{# if alt}}{{alt}}{{/if}}">
+                            </div>
+                        </div>
+                    {{/if}}
+                    <div class="{{# if image}}le-cell-3{{else}}le-cell-6{{/if}}">
+                        <div class="quote-text">
+                            <div class="quote-speech">
+                                {{# if quote}}
+                                    <p>{{quote}}</p>
+                                {{else}}
+                                    <p>"Das Spiel ist für erfahrene Spieler vergleichsweise einfach. Der Storyverlauf ist linear. Falsch machen kann man nicht viel. Das Spiel hat eine interessante wenn auch vorhersehbare Story. Ich kann das Spiel als kurzzeitige Abwechslung nur empfehlen."</p>
+                                {{/if}}
+                            </div>
+                            <div class="quote-name">
+                                {{# if player}}
+                                    <h4>{{player}}</h4>
+                                {{else}}
+                                    <h4>Max Mustermann</h4>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

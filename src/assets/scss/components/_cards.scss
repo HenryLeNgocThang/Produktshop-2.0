@@ -10,7 +10,7 @@
         justify-content: space-between;
         padding-left: 10px;
         padding-right: 10px;
-        padding-bottom: 55px;
+        padding-bottom: 25px;
         padding-top: 55px;
         overflow-x: scroll;
         margin-right: 10px;
@@ -61,16 +61,13 @@
                     border-top-right-radius: 4px;
                     border-top-left-radius: 4px;
                 }
-        
+
                 button.shopping-cart {
                     position: absolute;
                     top: 0;
-                    right: 50%;
-                    transform: translate(50%, -50%);
-        
-                    @include breakpoint(medium) {
-                        right: 0;
-                    }
+                    left: 0;
+                    border-bottom-right-radius: 50%;
+                    border-top-left-radius: 4px;
                 }
         
                 .cards-content {

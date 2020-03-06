@@ -371,11 +371,9 @@ p, a, li {
 
 img[data-src] {
     opacity: 0;
-    transform: translateY(-20px);
     transition: all 1s ease-in-out;
 }
 
 img[data-load=true] {
     opacity: 1;
-    transform: translateY(0);
 }

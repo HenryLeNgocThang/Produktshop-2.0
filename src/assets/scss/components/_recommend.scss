@@ -43,6 +43,7 @@
                 &:last-child {
                     background: url("../img/recommends/the-witcher-3-wild-hunt.jpg") center top no-repeat;
                     background-size: cover;
+                    border: 2px solid $black;
                 }
 
                 &:nth-child(2) {
@@ -76,6 +77,28 @@
                     &:hover {
                         flex-basis: 25%;
                         flex-grow: 1;
+
+                        &:before {
+                            opacity: 1;
+                        }
+
+                        .recommend-card-text {
+                            p {
+                                opacity: 1;
+                                transition: opacity $transition-duration $transition-duration ease-in-out, color $transition-duration 0s ease-in-out;
+                            }
+                        }
+                    }
+
+                    &:before {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        background: rgba($color: #000000, $alpha: .5);
+                        border-radius: 15px;
+                        transition: all $transition-duration ease-in-out;
                     }
                 }
 
@@ -84,33 +107,31 @@
                 }
 
                 .recommend-card-text {
-                    transform: skew(0) translate(0, 50%);
+                    transform: skew(0) translate(-50%, 0);
                     position: absolute;
-                    bottom: 0;
-                    width: 100%;
+                    top: 20%;
+                    left: 50%;
+                    width: 80%;
                     height: auto;
                     text-align: center;
 
                     @include breakpoint(large) {
-                        transform: skew(10deg) translate(0, 50%);
+                        transform: skew(10deg) translate(-50%, 0);
+
+                        &:hover {
+                            p {
+                                color: #00abff;
+                            }
+                        }
                     }
 
                     p {
-                        display: inline-block;
                         font-size: 16px;
-                        border-radius: 4px;
                         margin: 0;
-                        width: auto;
-                        padding: 5px 10px;
-                        background: $secondary-color;
                         color: $white;
-                        border: 2px solid $secondary-color;
-                        transition: all $transition-duration ease-in-out;
-
-                        &:hover {
-                            color: $secondary-color;
-                            background: transparent;
-                        }
+                        opacity: 0;
+                        font-weight: bold;
+                        transition: color $transition-duration 0s ease-in-out;
                     }
                 }
             }
