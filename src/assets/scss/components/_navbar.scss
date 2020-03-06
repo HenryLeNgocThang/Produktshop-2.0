@@ -228,6 +228,12 @@
             &.navbar-dropdown {
                 position: relative;
 
+                a {
+                    span {
+                        color: $secondary-color;
+                    }
+                }
+
                 &:hover .navbar-dropdown-item {
                     display: block;
                     opacity: 1;
