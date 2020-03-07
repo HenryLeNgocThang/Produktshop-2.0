@@ -205,7 +205,32 @@
     }
 
     @include breakpoint(desktop) {
-        padding: 10px 150px 0;
+        padding: 20px 150px 10px;
+    }
+
+    &.navbar-scrolled {
+        @include breakpoint(desktop) {
+            padding: 10px 150px 0;
+        }
+
+        .navbar-logo {
+            top: 0;
+            max-width: 80px;
+        }
+    }
+
+    .navbar-logo {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-width: 100px;
+        width: 100%;
+        height: auto;
+        background: $light;
+        border-radius: 50%;
+        box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+        transition: all $transition-duration ease-in-out;
     }
 
     ul.navbar-menu {

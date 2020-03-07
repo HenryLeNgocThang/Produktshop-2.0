@@ -41,6 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })();
 
+    // NAVBAR STYLE AT SCROLL
+    (function() {
+        let navbar = document.querySelector("nav.navbar");
+
+        document.addEventListener("scroll", () => {
+            if (window.pageYOffset <= navbar.getBoundingClientRect().top + 50) {
+                navbar.classList.remove("navbar-scrolled");
+            }
+            else {
+                navbar.classList.add("navbar-scrolled");
+            }
+        });
+    })();
+
     // NAVBAR SEARCH INPUT
     (function() {
         let searchInput = document.querySelector("#navbar-search-input");
