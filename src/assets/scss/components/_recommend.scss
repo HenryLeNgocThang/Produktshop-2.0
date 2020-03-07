@@ -35,15 +35,50 @@
                 border-radius: 15px;
                 transition: all $transition-duration ease-in-out;
 
+                .recommend-card-text {
+                    transform: skew(0) translate(-50%, 0);
+                    position: absolute;
+                    top: 20%;
+                    left: 50%;
+                    width: 80%;
+                    height: auto;
+
+                    @include breakpoint(large) {
+                        transform: skew(10deg) translate(-50%, 0);
+                    }
+
+                    p {
+                        font-size: 12px;
+                        margin: 0;
+                        color: $white;
+                        opacity: 0;
+                        font-weight: bold;
+                        transition: color $transition-duration 0s ease-in-out;
+                        transform: skew(-10deg);
+                        
+                        @include breakpoint(desktop) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
                 &:first-child {
                     background: url("../img/recommends/forza-horizon-4.jpg") center top no-repeat;
                     background-size: cover;
+
+                    .recommend-card-text {
+                        left: 60%;
+                    }
                 }
 
                 &:last-child {
                     background: url("../img/recommends/the-witcher-3-wild-hunt.jpg") center top no-repeat;
                     background-size: cover;
                     border: 2px solid $black;
+
+                    .recommend-card-text {
+                        left: 45%;
+                    }
                 }
 
                 &:nth-child(2) {
@@ -64,10 +99,6 @@
 
                     &:first-child {
                         flex-basis: 25%;
-
-                        .recommend-card-text {
-                            margin-left: 20px;
-                        }
                     }
 
                     &:last-child {
@@ -104,35 +135,6 @@
 
                 @include breakpoint(desktop) {
                     height: 350px;
-                }
-
-                .recommend-card-text {
-                    transform: skew(0) translate(-50%, 0);
-                    position: absolute;
-                    top: 20%;
-                    left: 50%;
-                    width: 80%;
-                    height: auto;
-                    text-align: center;
-
-                    @include breakpoint(large) {
-                        transform: skew(10deg) translate(-50%, 0);
-
-                        &:hover {
-                            p {
-                                color: #00abff;
-                            }
-                        }
-                    }
-
-                    p {
-                        font-size: 16px;
-                        margin: 0;
-                        color: $white;
-                        opacity: 0;
-                        font-weight: bold;
-                        transition: color $transition-duration 0s ease-in-out;
-                    }
                 }
             }
         }
