@@ -13,7 +13,7 @@
                     <label>
                         <input class="navbar-remember-checkbox" type="checkbox" name="remember"> Angemeldet bleiben
                     </label>
-                    <input type="submit" value="Login">
+                    <input class="button" type="submit" value="Login">
                     <label>
                         <input type="radio" name="navbar-form-switcher">
                         <span class="switch-to-recover">Passwort vergessen?</span>
@@ -26,7 +26,7 @@
                 <form id="recover" autocomplete="off">
                     <label class="email" for="email">E-Mail</label>
                     <input type="text" name="email" placeholder="E-Mail eingeben">
-                    <input type="submit" value="Passwort anfordern">
+                    <input class="button" type="submit" value="Passwort anfordern">
                     <label>
                         <input type="radio" name="navbar-form-switcher">
                         <span class="switch-to-register">Kein Konto? Hier registrieren</span>
@@ -45,7 +45,7 @@
                     <input type="password" name="password" placeholder="Passwort eingeben ">
                     <label class="password" for="password-submit">Passwort bestätigen</label>
                     <input type="password" name="password-submit" placeholder="Passwort bestätigen ">
-                    <input type="submit" value="Passwort anfordern">
+                    <input class="button" type="submit" value="Passwort anfordern">
                     <label>
                         <input type="radio" name="navbar-form-switcher">
                         <span class="switch-to-login">Konto vorhanden? Hier einloggen</span>
@@ -58,10 +58,11 @@
             </div>
         </li>
         <li class="navbar-dropdown bracket-hover">
-            <a title="Warenkorb"><i class="fa fa-shopping-cart no-arrow" aria-hidden="true"></i><span>0</span></a>
+            <a title="Warenkorb"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>0</span></a>
             <div class="navbar-dropdown-item">
                 <ul id="navbar-favorite-list">
                 </ul>
+                <a class="button" href="#hero">Bezahlen</a>
             </div>
         </li>
         <li class="navbar-dropdown bracket-hover">

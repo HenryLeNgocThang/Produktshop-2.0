@@ -361,18 +361,6 @@ body.dark-mode {
                         input[type=submit] {
                             display: block;
                             width: 100%;
-                            border-radius: 4px;
-                            border: 2px solid $secondary-color;
-                            background: $secondary-color;
-                            color: $light;
-                            padding: 5px 10px;
-                            cursor: pointer;
-                            transition: all $transition-duration ease-in-out;
-
-                            &:hover {
-                                background: transparent;
-                                color: $secondary-color;
-                            }
                         }
 
                         .email,
@@ -466,9 +454,10 @@ body.dark-mode {
 
             a {
                 text-decoration: none;
-                color: $secondary-color;
                 cursor: pointer;
+            }
 
+            >a {
                 &:after {
                     content: "›";
                     display: inline-block;
@@ -484,6 +473,16 @@ body.dark-mode {
             #navbar-favorite-list {
                 li {
                     font-size: 15px;
+                    white-space: nowrap;
+                    padding: 5px 0;
+
+                    &:last-child {
+                        margin-bottom: 10px;
+                    }
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $secondary-color;
+                    }
                 }
             }
         }

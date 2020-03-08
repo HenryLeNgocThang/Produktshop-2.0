@@ -124,6 +124,21 @@ button.shopping-cart {
     }
 }
 
+.button {
+    border-radius: 4px;
+    border: 2px solid $secondary-color;
+    background: $secondary-color;
+    color: $light;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all $transition-duration ease-in-out;
+
+    &:hover {
+        background: transparent;
+        color: $secondary-color;
+    }
+}
+
 @mixin breakpoint($size) {
     @if $size==medium {
         @media only screen and (min-width: 481px) and (min-height: 500px) {
