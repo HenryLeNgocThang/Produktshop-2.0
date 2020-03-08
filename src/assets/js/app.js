@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })();
 
-    // NAVBAR FORM
+    // NAVBAR FORM (e.g. Login)
     (function() {
         let forms = document.querySelectorAll(".navbar .navbar-dropdown-item form");
         let btnLogin = document.querySelectorAll(".switch-to-login");
@@ -155,10 +155,19 @@ document.addEventListener("DOMContentLoaded", () => {
         let favorites = [];
         let saved;
         let navCartAmount = document.querySelector(".navbar-dropdown a span");
+        let navbarList = document.querySelector(".navbar ul#navbar-favorite-list");
+        let itemTemplate = function(gamename) {
+            let template = `<li>${gamename}</li>`;
+            return template;
+        };
     
         if (localStorage.getItem("favorite-games") !== null) {
             saved = JSON.parse(localStorage.getItem("favorite-games"));
             navCartAmount.textContent = saved.length;
+
+            saved.forEach((item) => {
+                navbarList.insertAdjacentHTML('afterbegin', itemTemplate(item.title));
+            });
         } else {
             localStorage.clear("favorite-games");
             saved = [];
@@ -169,17 +178,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             for (let i = 0; i < cartBtns.length; i++) {
                 cartBtns[i].addEventListener("click", () => {
-
                     if (favorites.indexOf(gameJSON.games[cartBtns[i].dataset.game]) != -1) {
                         favorites.splice(favorites.indexOf(gameJSON.games[cartBtns[i].dataset.game]), 1);
                         cartBtns[i].classList.remove("added-favorite");
-                        localStorage.setItem("favorite-games", JSON.stringify(favorites));
                         navCartAmount.textContent = favorites.length;
+                        
+                        navbarList.querySelectorAll("li").forEach((item) => {
+                            if (item.textContent == gameJSON.games[cartBtns[i].dataset.game].title) {
+                                item.remove();
+                            }
+                        });
+
+                        localStorage.setItem("favorite-games", JSON.stringify(favorites));
                     } else {
                         favorites.push(gameJSON.games[cartBtns[i].dataset.game]);
                         cartBtns[i].classList.add("added-favorite");
-                        localStorage.setItem("favorite-games", JSON.stringify(favorites));
                         navCartAmount.textContent = favorites.length;
+                        navbarList.insertAdjacentHTML('afterbegin', itemTemplate(gameJSON.games[cartBtns[i].dataset.game].title));
+                        localStorage.setItem("favorite-games", JSON.stringify(favorites));
                     }
                 });
 

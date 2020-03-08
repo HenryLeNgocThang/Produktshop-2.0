@@ -223,7 +223,7 @@ body.dark-mode {
 
     &.navbar-scrolled {
         @include breakpoint(desktop) {
-            padding: 10px 150px 0;
+            padding: 15px 150px 0;
         }
 
         .navbar-logo-white,
@@ -239,16 +239,21 @@ body.dark-mode {
     .navbar-logo-white,
     .navbar-logo {
         position: absolute;
-        top: 170%;
+        top: 120%;
         left: 50%;
         transform: translate(-50%, 0);
-        max-width: 200px;
+        max-width: 150px;
         width: 100%;
         height: auto;
         background: transparent;
         border-radius: 50%;
         border: transparent;
         transition: all $transition-duration ease-in-out;
+
+        @media only screen and (min-width: 1025px) and (min-height: 600px) {
+            top: 170%;
+            max-width: 300px;
+        }
     }
 
     .navbar-logo {
@@ -265,6 +270,10 @@ body.dark-mode {
         list-style-type: none;
 
         >li {
+            display: inline-block;
+            padding-bottom: 10px;
+            color: $secondary-color;
+
             &:hover {
                 &.bracket-hover {
                     &:before,
@@ -295,12 +304,6 @@ body.dark-mode {
                     content: "]";
                 }
             }
-        }
-
-        >li {
-            display: inline-block;
-            padding-bottom: 10px;
-            color: $secondary-color;
 
             &.navbar-dropdown {
                 position: relative;
@@ -475,6 +478,12 @@ body.dark-mode {
 
                 i {
                     margin-right: 5px;
+                }
+            }
+
+            #navbar-favorite-list {
+                li {
+                    font-size: 15px;
                 }
             }
         }
