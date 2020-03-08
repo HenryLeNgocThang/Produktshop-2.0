@@ -16,7 +16,7 @@
         margin-right: 10px;
 
         @include breakpoint(desktop) {
-            padding-right: calc(10% + 30px);
+            padding-right: 10%;
             padding-top: 0;
             overflow-x: visible;
             margin-right: 0;

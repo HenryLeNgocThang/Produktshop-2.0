@@ -24,6 +24,19 @@
                 </div>
             </div>
         </div>
+        {{# if offer-end-date}}
+            <div class="le-row">
+                <div class="le-cell-6">
+                    <p class="offer-end-date">{{offer-end-date}}</p>
+                </div>
+            </div>
+        {{else}}
+            <div class="le-row">
+                <div class="le-cell-6">
+                    <p class="offer-end-date">Solange der Vorrat reicht.</p>
+                </div>
+            </div>
+        {{/if}}
     </div>
     {{# if link}}
         </a>

@@ -188,6 +188,18 @@
     }
 }
 
+body.dark-mode {
+    .navbar {
+        .navbar-logo-white {
+            opacity: 1;
+        }
+
+        .navbar-logo {
+            opacity: 0;
+        }
+    }
+}
+
 // DESKTOP NAVBAR
 .navbar {
     display: none;
@@ -197,8 +209,9 @@
     background: $light;
     width: 100vw;
     transition: all $transition-duration ease-in-out;
-    padding: 10px 10px 0;
+    padding: 15px 10px 0;
     box-shadow: 0 -5px 15px 0 rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid $secondary-color;
 
     @include breakpoint(large) {
         display: block;
@@ -213,14 +226,17 @@
             padding: 10px 150px 0;
         }
 
+        .navbar-logo-white,
         .navbar-logo {
-            top: 0;
+            top: 5px;
             max-width: 80px;
             background: $light;
+            border: 2px solid $secondary-color;
             box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
         }
     }
 
+    .navbar-logo-white,
     .navbar-logo {
         position: absolute;
         top: 170%;
@@ -231,8 +247,16 @@
         height: auto;
         background: transparent;
         border-radius: 50%;
-        box-shadow: 0 0 0 0 transparent;
+        border: transparent;
         transition: all $transition-duration ease-in-out;
+    }
+
+    .navbar-logo {
+        opacity: 1;
+    }
+
+    .navbar-logo-white {
+        opacity: 0;
     }
 
     ul.navbar-menu {
