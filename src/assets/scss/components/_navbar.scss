@@ -240,7 +240,7 @@ body.dark-mode {
     .navbar-logo {
         position: absolute;
         top: 120%;
-        left: 50%;
+        left: calc(50% - 9px);
         transform: translate(-50%, 0);
         max-width: 150px;
         width: 100%;

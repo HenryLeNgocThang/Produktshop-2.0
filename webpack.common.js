@@ -12,7 +12,7 @@ module.exports = {
   entry: {
     app: Path.join(__dirname, 'src/entries/app.js'),
     index: Path.join(__dirname, 'src/entries/index.js'),
-    favorites: Path.join(__dirname, 'src/entries/favorites.js'),
+    purchase: Path.join(__dirname, 'src/entries/purchase.js'),
   },
   output: {
     path: Path.join(__dirname, 'dist'),
@@ -51,9 +51,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       config: config,
-      chunks: ['app', 'favorites'],
-      template: Path.resolve(__dirname, 'src/pages/favorites.hbs'),
-      filename: 'favorites.html',
+      chunks: ['app', 'purchase'],
+      template: Path.resolve(__dirname, 'src/pages/purchase.hbs'),
+      filename: 'purchase.html',
       minify: {
         collapseWhitespace: isPreproduction ? false : true,
         removeComments: isPreproduction ? false : true,
