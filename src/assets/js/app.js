@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // TOGGLE BTN FOR DARKMODE
     (function () {
-        let themeToggle = document.querySelector("#hero .label input");
+        let themeToggle = document.querySelector("body .label input");
         let body = document.querySelector("body");
 
         if (getCookie("darkmode-cookie") == "true") {

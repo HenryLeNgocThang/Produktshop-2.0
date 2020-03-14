@@ -35,3 +35,32 @@
 #main {
     background-color: $light;
 }
+
+.label {
+    position: absolute;
+    right: 15px;
+    top: 70px;
+
+    @include breakpoint(desktop) {
+        top: 20px;
+    }
+
+    &:after,
+    &:before {
+        font-family: 'FontAwesome';
+        font-size: 20px;
+        z-index: 1;
+    }
+
+    &:before {
+        content: "\f185";
+        margin-right: 10px;
+        color: $secondary-color;
+    }
+
+    &:after {
+        content: "\f186";
+        margin-left: 10px;
+        color: $secondary-color;
+    }
+}

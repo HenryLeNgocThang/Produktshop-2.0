@@ -2,7 +2,7 @@
     <img class="navbar-logo" data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/logo.svg">
     <img class="navbar-logo-white" data-src="{{ htmlWebpackPlugin.options.assetPath }}assets/img/logo-white.svg">
     <ul class="navbar-menu">
-        <li class="navbar-dropdown bracket-hover">
+        <li class="navbar-dropdown bracket-hover dropdown-arrow">
             <a><i class="fa fa-user-circle"></i></a>
             <div class="navbar-dropdown-item">
                 <form id="login" autocomplete="off">
@@ -57,7 +57,7 @@
                 </form>
             </div>
         </li>
-        <li class="navbar-dropdown bracket-hover">
+        <li class="navbar-dropdown bracket-hover dropdown-arrow">
             <a title="Warenkorb"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>0</span></a>
             <div class="navbar-dropdown-item">
                 <ul id="navbar-favorite-list">
@@ -65,11 +65,14 @@
                 <a class="button" href="/purchase.html">Bezahlen</a>
             </div>
         </li>
-        <li class="navbar-dropdown bracket-hover">
-            <a title="Über uns">Über uns</a>
-            <div class="navbar-dropdown-item">
-                <h3>Wir sind neu :D</h3>
-            </div>
+        <li class="bracket-hover">
+            <a title="Home">Home</a>
+        </li>
+        <li class="bracket-hover">
+            <a title="Produkte">Produkte</a>
+        </li>
+        <li class="bracket-hover">
+            <a title="Kontakt">Kontakt</a>
         </li>
         <li>
             <label>

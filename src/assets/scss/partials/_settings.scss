@@ -2,7 +2,7 @@ $primary-color: var(--primeColor);
 $secondary-color: var(--secondColor);
 // $primary-color: #00abff;
 // $secondary-color: #0a2b3b;
-$black: #222;
+$black: #171717;
 $white: #fff;
 $primary-font-color: $black;
 $secondary-font-color: $white;
@@ -16,13 +16,13 @@ body.light-mode {
     --primeColor: #00abff;
     --secondColor: #0a2b3b;
     --light: #fff;
-    --dark: #222;
+    --dark: #171717;
 }
 
 body.dark-mode {
     --primeColor: #0a2b3b;
     --secondColor: #00abff;
-    --light: #222;
+    --light: #171717;
     --dark: #fff;
 }
 
@@ -131,6 +131,7 @@ button.shopping-cart {
     color: $light;
     padding: 5px 10px;
     cursor: pointer;
+    text-decoration: none;
     transition: all $transition-duration ease-in-out;
 
     &:hover {

@@ -28,35 +28,6 @@ body.dark-mode {
         transition: all $transition-duration ease-in-out;
     }
 
-    .label {
-        position: absolute;
-        right: 20px;
-        top: 55px;
-
-        @include breakpoint(desktop) {
-            top: 18px;
-        }
-
-        &:after,
-        &:before {
-            font-family: 'FontAwesome';
-            font-size: 20px;
-            z-index: 1;
-        }
-
-        &:before {
-            content: "\f185";
-            margin-right: 10px;
-            color: $secondary-color;
-        }
-
-        &:after {
-            content: "\f186";
-            margin-left: 10px;
-            color: $secondary-color;
-        }
-    }
-
     .hero-text {
         position: absolute;
         top: 50%;

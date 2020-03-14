@@ -252,7 +252,7 @@ body.dark-mode {
 
         @media only screen and (min-width: 1025px) and (min-height: 600px) {
             top: 170%;
-            max-width: 300px;
+            max-width: 200px;
         }
     }
 
@@ -453,20 +453,21 @@ body.dark-mode {
             }
 
             a {
-                text-decoration: none;
                 cursor: pointer;
             }
 
-            >a {
-                &:after {
-                    content: "›";
-                    display: inline-block;
-                    margin-left: 10px;
-                    transform: rotateZ(90deg);
-                }
-
-                i {
-                    margin-right: 5px;
+            &.dropdown-arrow {
+                >a {
+                    &:after {
+                        content: "›";
+                        display: inline-block;
+                        margin-left: 10px;
+                        transform: rotateZ(90deg);
+                    }
+    
+                    i {
+                        margin-right: 5px;
+                    }
                 }
             }
 
