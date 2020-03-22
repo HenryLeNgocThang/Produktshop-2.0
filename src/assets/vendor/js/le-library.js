@@ -477,3 +477,27 @@ function createElement(array, tag = "div", attribute = "", value = "", text = ""
 
     array.push(element);
 }
+
+function countDown(deadline = "Jan 1, 2021 00:00:00", elm = null, prefix = "", suffix = "") {
+    if (elm != null) {
+        var countDownDate = new Date(deadline).getTime();
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            elm.innerText = prefix + days + "d " + hours + "h " + minutes + "m " + seconds + "s " + suffix;
+
+            if (distance < 0) {
+                clearInterval(x);
+                elm.innerText = "Sales over";
+            }
+        }, 1000);
+    }
+    else {
+        console.error("Paremeter is missing. Please make sure to set an element!");
+    }
+}
