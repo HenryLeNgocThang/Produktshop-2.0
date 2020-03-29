@@ -1,7 +1,8 @@
 #recommends {
     width: 100%;
     height: auto;
-    background-color: $light;
+    margin-top: 80px;
+    background-color: $primary-color;
 
     h2 {
         color: $dark;
@@ -95,8 +96,6 @@
                 }
 
                 &:last-child {
-                    border: 2px solid $black;
-
                     .recommend-card-text {
                         left: 45%;
                     }

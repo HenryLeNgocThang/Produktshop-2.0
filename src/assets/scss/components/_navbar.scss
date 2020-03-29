@@ -346,6 +346,7 @@ body.dark-mode {
                             background: transparent;
                             display: inline-block;
                             width: 100%;
+                            color: $dark;
                             transition: all $transition-duration ease-in-out;
 
                             &[name="username"]:not([value=""]) {
