@@ -276,6 +276,7 @@ body.dark-mode {
 
             &:hover {
                 &.bracket-hover {
+
                     &:before,
                     &:after {
                         opacity: 1;
@@ -289,6 +290,7 @@ body.dark-mode {
             }
 
             &.bracket-hover {
+
                 &:before,
                 &:after {
                     margin: 0 5px;
@@ -299,7 +301,7 @@ body.dark-mode {
                 &:before {
                     content: "[";
                 }
-                
+
                 &:after {
                     content: "]";
                 }
@@ -330,23 +332,113 @@ body.dark-mode {
                     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
                     width: auto;
                     min-width: 300px;
-                    
+
                     &:hover {
                         display: block;
                     }
 
                     form {
                         input:not([type=submit]) {
-                            margin: 5px 0 10px;
+                            margin: 20px 0 10px;
                             border: none;
                             border-bottom: 1px solid #aaa;
                             padding: 7px 0 7px 25px;
                             background: transparent;
                             display: inline-block;
                             width: 100%;
+                            transition: all $transition-duration ease-in-out;
+
+                            &[name="username"]:not([value=""]) {
+                                ~ .username {
+                                    span {
+                                        top: -10px;
+                                        left: 0px;
+                                        font-size: 13px;
+                                        color: $secondary-color;
+                                    }
+                                }
+                            }
+
+                            &[name="password"]:not([value=""]) {
+                                ~ .password {
+                                    span {
+                                        top: -10px;
+                                        left: 0px;
+                                        font-size: 13px;
+                                        color: $secondary-color;
+                                    }
+                                }
+                            }
+
+                            &[name="password-submit"]:not([value=""]) {
+                                ~ .password-submit {
+                                    span {
+                                        top: -10px;
+                                        left: 0px;
+                                        font-size: 13px;
+                                        color: $secondary-color;
+                                    }
+                                }
+                            }
+
+                            &[name="email"]:not([value=""]) {
+                                ~ .email {
+                                    span {
+                                        top: -10px;
+                                        left: 0px;
+                                        font-size: 13px;
+                                        color: $secondary-color;
+                                    }
+                                }
+                            }
 
                             &:focus {
                                 outline: none;
+                                border-bottom: 1px solid $secondary-color;
+
+                                &[name="username"] {
+                                    ~ .username {
+                                        span {
+                                            top: -10px;
+                                            left: 0px;
+                                            font-size: 13px;
+                                            color: $secondary-color;
+                                        }
+                                    }
+                                }
+
+                                &[name="password"] {
+                                    ~ .password {
+                                        span {
+                                            top: -10px;
+                                            left: 0px;
+                                            font-size: 13px;
+                                            color: $secondary-color;
+                                        }
+                                    }
+                                }
+
+                                &[name="password-submit"] {
+                                    ~ .password-submit {
+                                        span {
+                                            top: -10px;
+                                            left: 0px;
+                                            font-size: 13px;
+                                            color: $secondary-color;
+                                        }
+                                    }
+                                }
+
+                                &[name="email"] {
+                                    ~ .email {
+                                        span {
+                                            top: -10px;
+                                            left: 0px;
+                                            font-size: 13px;
+                                            color: $secondary-color;
+                                        }
+                                    }
+                                }
                             }
 
                             &::placeholder {
@@ -365,15 +457,30 @@ body.dark-mode {
 
                         .email,
                         .password,
+                        .password-submit,
                         .username {
+                            display: block;
                             position: relative;
+                            top: -50px;
+                            width: 100%;
+                            height: 15px;
+                            pointer-events: none;
 
                             &:before {
                                 font-family: "FontAwesome";
                                 color: #aaa;
                                 position: absolute;
-                                bottom: -25px;
+                                bottom: -15px;
                                 left: 5px;
+                            }
+
+                            span {
+                                position: absolute;
+                                top: 13px;
+                                left: 25px;
+                                font-size: 16px;
+                                color: #aaa;
+                                transition: all $transition-duration ease-in-out;
                             }
                         }
 
@@ -383,6 +490,7 @@ body.dark-mode {
                             }
                         }
 
+                        .password-submit,
                         .password {
                             &:before {
                                 content: "\f13e";
@@ -452,8 +560,10 @@ body.dark-mode {
                 }
             }
 
-            a {
+            a:not(.button) {
                 cursor: pointer;
+                color: $secondary-color;
+                text-decoration: none;
             }
 
             &.dropdown-arrow {
@@ -464,7 +574,7 @@ body.dark-mode {
                         margin-left: 10px;
                         transform: rotateZ(90deg);
                     }
-    
+
                     i {
                         margin-right: 5px;
                     }
@@ -472,6 +582,12 @@ body.dark-mode {
             }
 
             #navbar-favorite-list {
+                &:empty {
+                    ~a {
+                        display: none;
+                    }
+                }
+
                 li {
                     font-size: 15px;
                     white-space: nowrap;

@@ -1,0 +1,165 @@
+#footer {
+    background-color: $light;
+    color: $dark;
+
+    a {
+        color: $dark;
+    }
+
+    .footer-copyright {
+        p {
+            text-align: center;
+        }
+    }
+
+    .follow {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    #contact {
+        #contact-form {
+            margin-top: 18px;
+            font-family: "Open Sans", sans-serif;
+    
+            label {
+                position: relative;
+                pointer-events: none;
+                font-size: 16px;
+                top: -40px;
+                left: 10px;
+                color: #aaa;
+                transition: all $transition-duration ease-in-out;
+            }
+    
+            label[for="message"] {
+                top: -147px;
+            }
+    
+            input#name:not([value=""]) {
+                ~ label[for="name"] {
+                    color: $secondary-color;
+                    font-size: 13px;
+                    top: -65px;
+                    left: 0px;
+                }
+            }
+    
+            input#sirname:not([value=""]) {
+                ~ label[for="sirname"] {
+                    color: $secondary-color;
+                    font-size: 13px;
+                    top: -65px;
+                    left: 0px;
+                }
+            }
+    
+            input#email:not([value=""]) {
+                ~ label[for="email"] {
+                    color: $secondary-color;
+                    font-size: 13px;
+                    top: -65px;
+                    left: 0px;
+                }
+            }
+    
+            textarea#message:not([value=""]) {
+                ~ label[for="message"] {
+                    color: $secondary-color;
+                    top: -185px;
+                    left: 0;
+                    font-size: 13px;
+                }
+            }
+    
+            input#name {
+                &:focus {
+                    ~ label[for="name"] {
+                        color: $secondary-color;
+                        font-size: 13px;
+                        top: -65px;
+                        left: 0px;
+                    }
+                }
+            }
+    
+            input#sirname {
+                &:focus {
+                    ~ label[for="sirname"] {
+                        color: $secondary-color;
+                        font-size: 13px;
+                        top: -65px;
+                        left: 0px;
+                    }
+                }
+            }
+    
+            input#email {
+                &:focus {
+                    ~ label[for="email"] {
+                        color: $secondary-color;
+                        font-size: 13px;
+                        top: -65px;
+                        left: 0px;
+                    }
+                }
+            }
+    
+            textarea#message {
+                &:focus {
+                    ~ label[for="message"] {
+                        color: $secondary-color;
+                        top: -185px;
+                        left: 0;
+                        font-size: 13px;
+                    }
+                }
+            }
+    
+            input:not(.button) {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                margin-top: 5px;
+                border: none;
+                border-bottom: 1px solid #aaa;
+                transition: all $transition-duration ease-in-out;
+                background-color: $light;
+                color: $dark;
+                
+                &:focus {
+                    outline: none;
+                    border-bottom: 1px solid $secondary-color;
+                }
+            }
+    
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border-radius: 4px;
+                margin-top: 5px;
+                height: 150px;
+                resize: none;
+                background-color: $light;
+                color: $dark;
+    
+                &:focus {
+                    outline: none;
+                }
+            }
+    
+            input.button {
+                width: 100%;
+            }
+        }
+    }
+}
